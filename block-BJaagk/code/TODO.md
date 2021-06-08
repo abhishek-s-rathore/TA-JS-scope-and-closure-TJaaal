@@ -66,7 +66,7 @@ let average = (num1, num2, num3)=> (num1+num2+num3)/3;
 ```
 
 4. Why is a function call an expression in JavaScript?
-ANS: Function is an object and results in a value similar to expression and can be stored in any variable, so its called expression in JavaScript.
+ANS: When we call any function, it will return any value or undefined which is also a value, so it is called an expression.
 
 
 
@@ -77,11 +77,11 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // VALID; it will return result.
+let five = add(2, 3); // VALID; it will return result 5.
 
 five = add; // VALID; it will return function reference.
 
-five = five(10, 11); // VALID; it will return result since function will assign to variable five.
+five = five(10, 11); // VALID; it will return result 21, since function will assign to variable five .
 
 five = function () {
   return "Hello";
@@ -93,10 +93,12 @@ five = function () {
 ANS:In "function definition" we define that how function will perform an in "function call" we call it to perform certain action.
 
 ```js
+//Function  Definition
 function add(a, b) {
-  return a + b;
+  return a + b;  
 }
-
+ 
+// Function Call
 add(2, 3);
 ```
 
@@ -105,17 +107,28 @@ ANS: Both are expressions and can be stored in a variable.
 
 8. Is the code below valid or invalid. Explain with reason.
 
-
 ```js
 function hello() {
   console.log("Hello World!");
 }
 
-hello.user = "Sam"; // Valid 
+hello.user = "Sam"; // Valid; Because function is an object, it can have any key. 
 ```
 
 9. What is higher order function explain with an example.
 ANS: Higher-order functions are functions that take other functions as arguments or return functions as their results.
+```js
+function add(sum){
+  sum();
+}
+
+function add(){
+  function sum(num1, num2){ return num1+num2};
+}return sum;
+
+```
+
 
 10. Explain what is callback function. Why you can pass a function inside a function?
-ANS:
+ANS: Function which is accepted by a Higher Order Funtion is called Callback Function.
+We can pass a function because an argument can be an expression,and function is an expression. 
