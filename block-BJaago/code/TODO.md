@@ -17,7 +17,7 @@ function sayHelloToUser(name) {
 }
 
 var fullName = getFullName(firstName, lastName);
-var jon = getFullName("John", "Snow");
+var john = getFullName("John", "Snow");
 
 console.log(fullName);
 
@@ -26,7 +26,7 @@ var userMessage = sayHelloToUser("Bran");
 
 <!-- Put your image below -->
 
-![](./img/image1.jpg)
+![](./img/image1.jpeg)
 
 2.
 
@@ -43,7 +43,7 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image2.jpg)
+![](./img/image2.jpeg)
 
 3.
 
@@ -60,14 +60,14 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image3.jpg)
+![](./img/image3.jpeg)
 
 4.
 
 ```js
-console.log(arr); // output
-console.log(username); // output
-var usename = "Sam";
+console.log(arr); // undefined
+console.log(username); // undefined
+var username = "Sam";
 var arr = [1, 2, 3, 4, 5, 6];
 
 function double(num) {
@@ -77,4 +77,4 @@ function double(num) {
 
 <!-- Put your image below -->
 
-![](./img/image4.jpg)
+![](./img/image4.jpeg)
