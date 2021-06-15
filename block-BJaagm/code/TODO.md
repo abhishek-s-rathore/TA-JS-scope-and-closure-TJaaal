@@ -1,10 +1,14 @@
 1. What does thread of execution means in JavaScript?
+   ANS: The JavaScript Executes the code line by line and is known as Thread of execution.
 
 2. Where the JavaScript code gets executed?
+   ANS: As code execution starts, JavaScript creates a Global Execution Context, in which there is a specific memory section. All variables and function are stored in memory, and when it comes to execute a function, a "Function Execution Context" is formed inside the GEC, which also have a memory section. After execution of function the value is stored and the FEC is deleted and then next line is executed.
 
 3. What does context means in Global Execution Context?
 
+
 4. When do you create a global execution context.
+   ANS: It is created once when the code execution is started.
 
 5. Execution context consists of what all things?
 
@@ -14,15 +18,12 @@
 
 8. Function execution gets created during function execution or while declaring a function.
 
-
 9. Create a execution context diagram of the following code on your notebook. Take a screenshot/photo and store it in the folder named `img`. Use `![](./img/image-name.png)` to display it here.
-
-
 
 ```js
 var user = "Arya";
 
-function sayHello(){
+function sayHello() {
   return `Hello ${user}`;
 }
 
@@ -33,13 +34,11 @@ var userMsg = sayHello(user);
 
 ![](./img/image-name.jpg)
 
-
-
 ```js
 var marks = 400;
 var total = 500;
 
-function getPercentage(amount, totalAmount){
+function getPercentage(amount, totalAmount) {
   return (amount * 100) / totalAmount;
 }
 
@@ -51,15 +50,13 @@ var percentageProfit = getPercentage(400, 200);
 
 ![](./img/image-name.jpg)
 
-
-
 ```js
 var age = 21;
 
-function customeMessage(userAge){
-  if(userAge > 18){
+function customeMessage(userAge) {
+  if (userAge > 18) {
     return `You are an adult`;
-  }else {
+  } else {
     return `You are a kid`;
   }
 }
