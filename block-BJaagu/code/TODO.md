@@ -37,7 +37,7 @@ function sayHello() {
 Find the output of the code snippets below:
 
 ```js
-let username = "Tyrion";
+let username = "Tyrion"; 
 sayHello(); // Tyrion
 function sayHello() {
   console.log(username);
@@ -45,9 +45,9 @@ function sayHello() {
 ```
 
 Find the output of the code snippets below:
-
+ 
 ```js
-sayHello(); // Reference Error, numA is not defined.
+sayHello(); // Reference Error, username is not defined.
 let username = "Tyrion";
 function sayHello() {
   console.log(username);
@@ -60,24 +60,24 @@ Find the output of the code snippets below:
 let username = "Tyrion";
 sayHello(); // Reference Error, sayHello is not defined.
 let sayHello = () => {
-  console.log(username);
+  console.log(username); 
 };
 ```
 
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT
+sayHello(); // Reference Error, sayHello is not defined.
 let username = "Tyrion";
 let sayHello = () => {
-  console.log(username);
+  console.log(username); 
 };
 ```
 
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT
+sayHello(); // Reference Error, sayHello is not defined.
 var username = "Tyrion";
 let sayHello = () => {
   console.log(username);
@@ -88,7 +88,7 @@ Find the output of the code snippets below:
 
 ```js
 var username = "Tyrion";
-sayHello(); // OUTPUT
+sayHello(); //  Reference Error, sayHello is not defined.
 let sayHello = () => {
   console.log(username);
 };
@@ -102,7 +102,7 @@ let sayHello = () => {
   console.log(username);
   var username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); // Undefined
 ```
 
 Find the output of the code snippets below:
@@ -113,7 +113,7 @@ let sayHello = () => {
   var username = "John";
   console.log(username);
 };
-sayHello(); // OUTPUT
+sayHello(); // John
 ```
 
 Find the output of the code snippets below:
@@ -124,5 +124,5 @@ let sayHello = () => {
   console.log(username);
   let username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); // Reference Error, Can not access username before initilization.
 ```
