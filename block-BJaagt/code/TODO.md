@@ -9,7 +9,7 @@ function hello() {
 console.log(username); // output
 ```
 
-In above code we are looking for the variable named `usename`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
+In above code we are looking for the variable named `username`. There is no variable named `username` in the global scope. The variable is inside the function named `hello` and we can't access the variable defined inside a function from outside.
 
 The above code will throw an error `Reference Error username is not defined`.
 
@@ -22,6 +22,9 @@ The above code will throw an error `Reference Error username is not defined`.
 console.log(username); // output
 ```
 
+`const` create a block scope.
+In above code we are looking for the variable named `username`. There is no variable named `username` in the global scope. The variable is inside the `block` and we can't access the `const` defined inside a block from outside.
+
 The above code will throw an error `Reference Error username is not defined`.
 
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -33,6 +36,9 @@ if (true) {
 console.log(username); // output
 ```
 
+`let` create a block scope.
+In above code we are looking for the variable named `username`. There is no variable named `username` in the global scope. The variable is inside the `block` and we can't access the `let` defined inside a block from outside.
+
 The above code will throw an error `Reference Error username is not defined`.
 
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -41,10 +47,11 @@ The above code will throw an error `Reference Error username is not defined`.
 if (true) {
   var username = "Arya";
 }
-console.log(username); // output
+console.log(username); // Arya
 ```
 
-Output is `undefined`.
+Var never form a lock scope thus we will get output.
+Output is `Arya.
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -57,6 +64,8 @@ if (true) {
 console.log(useranme); // output
 ```
 
+The above code will throw an error `Syntax Error Identifier username is already defined`.
+
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
@@ -64,10 +73,11 @@ let username = "John";
 if (true) {
   let username = "Arya";
 }
-console.log(useranme); // output
+console.log(useranme); // John
 ```
 
-The above code will throw an error `Syntax Error username is already defined`.
+Output will be according to Global scope.
+Output is `John`.
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -77,9 +87,10 @@ function sayHello() {
   let username = "Arya";
 }
 sayHello();
-console.log(username); // output
+console.log(username); // John
 ```
 
+Output will be according to Global scope.
 Output is `John`
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
@@ -104,6 +115,8 @@ console.log(i, "Second");
 //  10 "Second"
 ```
 
+`var` will not create block scope.
+Thus `i= 10` will be displayed as output along with `Second`.
 Output is
 `1 "First" 2 "First" 3 "First" 4 "First" 5 "First" 6 "First" 7 "First" 8 "First" 9 "First" 10 "Second`
 
@@ -128,6 +141,8 @@ console.log(i, "Second");
 // output
 // Undefined
 ```
+
+`let` will create block scope.
 
 Output is
 0 "First"
