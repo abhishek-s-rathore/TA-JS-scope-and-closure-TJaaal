@@ -1,6 +1,29 @@
 1. Create a function by your choice that accepts a callback function.
 
+```js
+function operation(n, cbFn) {
+  return cbFn(n);
+}
+
+function addTen(num) {
+  return num + 10;
+}
+
+function subTen(num) {
+  return num - 10;
+}
+
+console.log(operation(20, addTen));
+console.log(operation(20, subTen));
+```
+
 2. Create a function by you choice that returns a function reference.
+
+```js
+function OperationReturn() {
+  return;
+}
+```
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -12,6 +35,7 @@ Have `map` return a new array filled with values that are the result of the 'cal
 // Your code goes here
 
 // Test Your Code
+
 function multiplyByTwo(n) {
   return n * 2;
 }
@@ -26,8 +50,8 @@ multiplyByTwo(2); //-> 4
 // Your code goes here
 
 // Test Your Code
-let alphabet = '';
-let letters = ['a', 'b', 'c', 'd'];
+let alphabet = "";
+let letters = ["a", "b", "c", "d"];
 forEach(letters, function (char) {
   alphabet += char;
 });
