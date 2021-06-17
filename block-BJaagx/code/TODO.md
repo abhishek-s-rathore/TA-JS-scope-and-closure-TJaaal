@@ -3,6 +3,7 @@
 
 ```js
 let marks = [34, 45, 56, 76];
+
 function multiplyArrayByN(arr, cb) {
   let finalArr = [];
   for (let elm of arr) {
@@ -10,17 +11,29 @@ function multiplyArrayByN(arr, cb) {
   }
   return finalArr;
 }
+
 function addFive(n) {
   return n + 5;
 }
+
 function multiplyBy5(n) {
   return n * 5;
 }
+
 let numbersAddedFive = multiplyArrayByN(marks, addFive);
+
 let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 ```
 
+
+ANS: `multiplyArrayByN` is Higher Order Function and `addFive`,  
+     `multiplyBy5` are callback function here. 
+
+
 2. Create the execution context diagram of the above code snippet
+ 
+ ![](./img/image.jpeg)
+ 
 
 3. Write a higher order function that accepts a number and a operation function (callback function). Call the callback function passing the number as argument and return the returned value.
 
