@@ -21,8 +21,13 @@ console.log(operation(20, subTen));
 
 ```js
 function OperationReturn() {
-  return;
+  function inner(num) {
+    return num + 10;
+  }
+  return inner;
 }
+
+OperationReturn();
 ```
 
 3. Create a higher order function called `map` that takes two inputs:
@@ -32,7 +37,13 @@ function OperationReturn() {
 Have `map` return a new array filled with values that are the result of the 'callback' function on each element of the input array.
 
 ```js
-// Your code goes here
+function map(arr, cbFn) {
+  let finalArr = [];
+  for (elem of arr) {
+    finalArr.push(cbFn(elem));
+  }
+  return finalArr;
+}
 
 // Test Your Code
 
@@ -47,7 +58,11 @@ multiplyByTwo(2); //-> 4
 4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
 
 ```js
-// Your code goes here
+function forEach(arr, cbFn) {
+  for (elem of arr) {
+    cbfn(elem);
+  }
+}
 
 // Test Your Code
 let alphabet = "";
@@ -61,13 +76,22 @@ console.log(alphabet); //prints 'abcd'
 5. Create higher-order function called `filter` takes an array and a callback, and runs the callback on each element of the array if the return value of callback is `truthy` store in new array return the new array.
 
 ```js
-// Test Your Code
+function filter(arr, cbFn) {
+  let finalArr = [];
+  for (elem of arr) {
+    if (cbFn(elem)) {
+      finalArr.push(elem);
+    }
+  }
+  return finalArr;
+}
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
   return n % 2 === 0;
 });
 console.log(even); // [4,234,20]
+
 let odd = filter(numbers, function (n) {
   return n % 2 !== 0;
 });
