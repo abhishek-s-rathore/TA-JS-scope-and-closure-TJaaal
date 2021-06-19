@@ -5,13 +5,15 @@ function outer() {
   let b = 10;
   function inner() {
     let a = 20;
-    console.log(a + b);
+    console.log(a + b); 
   }
   return inner;
 }
 let getSum = outer();
 let num = getSum();
 ```
+
+![](./img/image1.jpeg)
 
 2.
 
@@ -34,6 +36,8 @@ counter(); // output
 counter(); // output
 ```
 
+![](./img/image2.jpeg)
+
 3. Create the execution context diagram
 
 ```js
@@ -43,11 +47,13 @@ function makeColorChanger(color) {
   };
 }
 
-let blue = makeColorChanger('blue');
-let tomato = makeColorChanger('tomato');
+let blue = makeColorChanger("blue");
+let tomato = makeColorChanger("tomato");
 
 blue();
 tomato();
 
 // What will be the background color after the execution of last line
 ```
+
+![](./img/image3.jpeg)
