@@ -5,7 +5,7 @@ function outer() {
   let b = 10;
   function inner() {
     let a = 20;
-    console.log(a + b); 
+    console.log(a + b);
   }
   return inner;
 }
@@ -30,10 +30,10 @@ function getCounter() {
 
 let counter = getCounter();
 
-counter(); // output
-counter(); // output
-counter(); // output
-counter(); // output
+counter(); // 0
+counter(); // 1
+counter(); // 2
+counter(); // 3
 ```
 
 ![](./img/image2.jpeg)
@@ -53,7 +53,7 @@ let tomato = makeColorChanger("tomato");
 blue();
 tomato();
 
-// What will be the background color after the execution of last line
+// What will be the background color after the execution of last line = tomato.
 ```
 
 ![](./img/image3.jpeg)
