@@ -3,9 +3,9 @@
 1. Write a function, `outer` that takes an input `string`. Inside the function `outer` define another function expression named `sayHello` which alerts the `input`. `sayHello` should be call immediately after it is defined.
 
 ```js
-function outer(string) {
+function outer(str) {
   let sayHello = () => {
-    alert(string);
+    alert(str);
   };
   sayHello();
 }
@@ -16,17 +16,22 @@ outer("Hello Abhishek!");
 
 ```js
 function delay(cbFn, time) {
-  return setTimeout(cbFn, time);
+  return function () {
+    setTimeout(cbFn, time);
+  };
 }
 
-delay(alert("Hey!"), 2000);
+let time = delay(() => alert("Hey!"), 2000);
+time();
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
 
 ```js
-function lastName() {
-  //  Your code goes here
+function lastName(lName) {
+  return function inner(fName) {
+    console.log(fName + " " + lName);
+  };
 }
 
 let lastNameLee = lastName("lee"); // logs nothing
@@ -44,7 +49,17 @@ lastNameLee("Lynne"); //logs 'Lynne Lee'
 
 ```js
 function storyWriter() {
-  // Your code goes here
+  let story = "";
+  return {
+    addWords: function (words) {
+      story += words;
+      return story;
+    },
+    erase: function () {
+      story = "";
+      return story;
+    },
+  };
 }
 
 // Test
@@ -64,11 +79,14 @@ storyOfMyLife.erase(); // ''
 When `forEach` function is called it returns another function. When the returned function is called it returns the element from the array at specific index. Every time you call the returned function the value of index should increment.
 
 ```js
-function forEach() {
-  // Your code goes here
+function forEach(arr) {
+  let index = 0;
+  return function () {
+    return arr[index++];
+  };
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -82,7 +100,9 @@ The returned function accepts a string `prefix` and returns `prefix` and `title`
 
 ```js
 function addDesignation(title) {
-  // your code goes here
+  return function (prefix) {
+    return `${prefix} ${title}`;
+  };
 }
 
 let sales = addDesignation("Salesman");
@@ -100,8 +120,20 @@ manager("Head"); // Head Manager
 - `current` will return the current salary returns the updated salary
 
 ```js
-function changeSalary() {
-  // Your code goes here
+function changeSalary(currSal) {
+  return {
+    raise: function () {
+      currSal += 500;
+      return currSal;
+    },
+    lower: function () {
+      currSal -= 500;
+      return currSal;
+    },
+    current: function () {
+      return currSal;
+    },
+  };
 }
 
 let sam = changeSalary(2000);
@@ -118,7 +150,21 @@ arya.lower(); // 3500
 - `setLastName`: accepts a parameter last name using which updates the firstName and return the updated full name
 
 ```js
-// Your code goes here
+function nameFactory(fName, lName) {
+  return {
+    getFullName() {
+      return `${fName} ${lName}`;
+    },
+    setFirstName(fn) {
+      fName = fn;
+      return `${fName} ${lName}`;
+    },
+    setLastName(ln) {
+      lName = ln;
+      return `${fName} ${lName}`;
+    },
+  };
+}
 
 let arya = nameFactory("Arya", "Stark");
 arya.getFullName(); // "Arya Stark"
@@ -131,8 +177,12 @@ arya.setLastName("Lannister"); // "Jon Lannister"
 The returned function accepts a string (children) and returns the children with the tag you passed.
 
 ```js
-function createTag() {
-  // your code goes here
+function createTag(elem) {
+  return function (child) {
+    let element = document.createElement(elem);
+    element.innerText = child;
+    return element;
+  };
 }
 
 let bold = createTag("b");
