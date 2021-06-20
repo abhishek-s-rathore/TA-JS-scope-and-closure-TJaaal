@@ -10,15 +10,12 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
-  // Your code goes here
-}
+function loop() {}
 
 loop(
   3,
   (n) => n > 0,
-  (n) => n - 1,
-  console.log
+  (n) => n - 1
 );
 // → 3
 // → 2
@@ -47,11 +44,7 @@ function intersection(arrays) {}
 
 // Test
 console.log(
-  intersection(
-    [5, 10, 15, 20],
-    [15, 88, 1, 5, 7],
-    [1, 10, 15, 5, 20]
-  )
+  intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 ); // should log: [5, 15]
 ```
 
@@ -61,8 +54,6 @@ console.log(
 function union(arrays) {}
 
 // Test
-console.log(
-  union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5])
-);
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 ```
